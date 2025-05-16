@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     siteName: "Metro Cluster Tembalang",
     locale: "en_US",
     type: "website",
+    images: "/logo.png",
   },
   robots: {
     index: true,
