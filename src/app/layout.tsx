@@ -7,7 +7,11 @@ import { baseUrl } from "./sitemap";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import { cn } from "@/lib/utils";
-import { Bricolage_Grotesque, Manrope } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  Manrope,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import Head from "next/head";
@@ -15,6 +19,12 @@ import Head from "next/head";
 const serif = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-serif",
+  display: "swap",
+});
+
+const sans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -60,15 +70,16 @@ export default function RootLayout({
       className={cn(
         "text-black bg-white dark:text-white dark:bg-black font-sans",
         serif.variable,
+        sans.variable,
       )}
       suppressHydrationWarning
     >
-      <Head>
+      {/* <Head>
         <link
           href="https://api.fontshare.com/v2/css?f[]=general-sans@1,2&display=swap"
           rel="stylesheet"
         />
-      </Head>
+      </Head> */}
       <body className="antialiased lg:mx-auto">
         <main className="flex-auto min-w-0 flex flex-col md:px-0">
           <ThemeProvider

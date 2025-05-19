@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --font-serif: "Bricolage Grotesque", "sans-serif";
-    --font-sans: "General Sans", "serif";
+    --font-serif: "Bricolage Grotesque", "serif";
+    --font-sans: "Plus Jakarta Sans", "sans-serif";
 }
 
 ::selection {

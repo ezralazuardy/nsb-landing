@@ -35,17 +35,19 @@ import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
+    message: "Nama setidaknya 2 karakter.",
   }),
   email: z.string().email({
-    message: "Please enter a valid email address.",
+    message: "Masukkan email yang valid.",
   }),
-  phone: z.string().optional(),
+  phone: z.string().min(10, {
+    message: "Nomor telepon setidaknya 10 karakter.",
+  }),
   type: z.string({
-    required_error: "Please select a project type.",
+    required_error: "Silakan pilih tipe yang diinginkan.",
   }),
   message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
+    message: "Masukkan pesan setidaknya 10 karakter.",
   }),
 });
 
@@ -64,9 +66,14 @@ export default function CtaSection() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast("Consultation Request Received", {
-      description: "We'll contact you within 24 hours to schedule a demo.",
+    window.open(
+      `
+      https://wa.me/6281227277982?text=Nama:%20${values.name}%0AEmail:%20${values.email}%0ANo.%20WhatsApp:%20${values.phone}%0ATipe%20Rumah:%20${values.type}%0ACatatan:%20${values.message}
+      `,
+      "_blank",
+    );
+    toast("Permintaan Penawaran Telah Dikirim", {
+      description: "Kami akan menghubungi Anda dalam waktu 24 jam",
     });
     form.reset();
   }
@@ -92,7 +99,7 @@ export default function CtaSection() {
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
-                  <div className="bg-primary/10 rounded-full p-1 mr-3 mt-1">
+                  <div className="bg-primary/10 rounded-full p-1 mr-3">
                     <svg
                       className="h-4 w-4 text-primary"
                       fill="none"
@@ -110,7 +117,7 @@ export default function CtaSection() {
                   <span>Gratis Konsultasi</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-primary/10 rounded-full p-1 mr-3 mt-1">
+                  <div className="bg-primary/10 rounded-full p-1 mr-3">
                     <svg
                       className="h-4 w-4 text-primary"
                       fill="none"
@@ -128,7 +135,7 @@ export default function CtaSection() {
                   <span>Bisa Datang Langsung ke Lokasi</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-primary/10 rounded-full p-1 mr-3 mt-1">
+                  <div className="bg-primary/10 rounded-full p-1 mr-3">
                     <svg
                       className="h-4 w-4 text-primary"
                       fill="none"

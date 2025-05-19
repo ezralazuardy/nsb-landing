@@ -52,10 +52,10 @@ const footerLinks: FooterLinksType[] = [
         name: (
           <div className="flex flex-col">
             <span className="font-semibold">Email Bisnis</span>
-            <span> metrocluster.ts@gmail.com</span>
+            <span>contact@metroclustertembalang.com</span>
           </div>
         ),
-        href: "mailto:metrocluster.ts@gmail.com",
+        href: "mailto:contact@metroclustertembalang.com",
         external: true,
       },
     ],
@@ -64,7 +64,7 @@ const footerLinks: FooterLinksType[] = [
 
 export default function Footer() {
   return (
-    <footer className="bg-muted/30 pt-16 pb-8">
+    <footer className="bg-muted/30 pt-16 pb-8 !font-sans">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Column */}
@@ -109,23 +109,13 @@ export default function Footer() {
           ))}
         </div>
 
-        <Separator className="my-8" />
+        {/* <Separator className="my-8" /> */}
 
-        <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-between sm:space-y-0">
-          <p className="text-sm text-muted-foreground">
+        <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-between sm:space-y-0 mt-8">
+          <p className="text-sm text-muted-foreground text-center mx-auto">
             © {new Date().getFullYear()} Metro Cluster Tembalang. All rights
             reserved.
           </p>
-          <div className="flex space-x-4 text-sm">
-            <Link
-              href="https://instagram.com/metrocluster_tembalang"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Instagram
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
