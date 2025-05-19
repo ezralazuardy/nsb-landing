@@ -22,7 +22,6 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Handle scroll effect for transparent header
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -39,7 +38,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "sticky top-0 z-50 w-full transition-all duration-300 !font-sans",
         scrolled
           ? "bg-background/80 backdrop-blur-md border-b border-border"
           : "bg-transparent",

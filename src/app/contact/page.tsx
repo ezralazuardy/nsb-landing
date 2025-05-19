@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,7 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
@@ -25,27 +24,17 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
-import {
-  PhoneCall,
-  Mail,
-  MapPin,
-  Check,
-  CheckCircle,
-  ArrowRight,
-  Instagram,
-} from "lucide-react";
+import { PhoneCall, Mail, MapPin, Instagram } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
 import Heading from "@/components/title";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -64,8 +53,6 @@ const formSchema = z.object({
 });
 
 export default function ContactPage() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const formRef = useRef<HTMLFormElement>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -80,9 +67,14 @@ export default function ContactPage() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast("Consultation Request Received", {
-      description: "We'll contact you within 24 hours to schedule a demo.",
+    window.open(
+      `
+      https://wa.me/6281227277982?text=Nama:%20${values.name}%0AEmail:%20${values.email}%0ANo.%20WhatsApp:%20${values.phone}%0ATipe%20Rumah:%20${values.type}%0ACatatan:%20${values.message}
+      `,
+      "_blank",
+    );
+    toast("Permintaan Penawaran Telah Dikirim", {
+      description: "Kami akan menghubungi Anda dalam waktu 24 jam",
     });
     form.reset();
   }
@@ -97,8 +89,8 @@ export default function ContactPage() {
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email Bisnis",
-      value: "metrocluster.ts@gmail.com",
-      link: "mailto: metrocluster.ts@gmail.com",
+      value: "contact@metroclustertembalang.com",
+      link: "mailto:contact@metroclustertembalang.com",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
@@ -122,7 +114,6 @@ export default function ContactPage() {
         subtitle="Pilih tipe rumah yang sesuai dengan gaya hidup Anda. Mulai dari 36 m², dengan desain modern dan fungsional. Setiap rumah dirancang untuk memberikan kenyamanan maksimal bagi keluarga Anda."
       />
 
-      {/* Contact Form Section */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-6 items-start">
@@ -134,155 +125,129 @@ export default function ContactPage() {
               className="lg:col-span-2"
             >
               <Card className="border-none shadow-none">
-                {!isSubmitted ? (
-                  <>
-                    <CardHeader>
-                      <CardTitle className="text-3xl font-serif">
-                        Minta Konsultasi
-                      </CardTitle>
-                      <CardDescription>
-                        Isi formulir di bawah ini dan kami akan menghubungi Anda
-                        dalam waktu 24 jam.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <Form {...form}>
-                        <form
-                          ref={formRef}
-                          onSubmit={form.handleSubmit(onSubmit)}
-                          className="space-y-6"
-                        >
-                          <FormField
-                            control={form.control}
-                            name="name"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Nama</FormLabel>
+                <>
+                  <CardHeader>
+                    <CardTitle className="text-3xl font-serif">
+                      Minta Konsultasi
+                    </CardTitle>
+                    <CardDescription>
+                      Isi formulir di bawah ini dan kami akan menghubungi Anda
+                      dalam waktu 24 jam.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Form {...form}>
+                      <form
+                        ref={formRef}
+                        onSubmit={form.handleSubmit(onSubmit)}
+                        className="space-y-6"
+                      >
+                        <FormField
+                          control={form.control}
+                          name="name"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Nama</FormLabel>
+                              <FormControl>
+                                <Input
+                                  placeholder="Masukkan nama anda"
+                                  {...field}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Email</FormLabel>
+                              <FormControl>
+                                <Input
+                                  type="email"
+                                  placeholder="email@example.com"
+                                  {...field}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="phone"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Nomor Telepon / WhatsApp</FormLabel>
+                              <FormControl>
+                                <Input
+                                  type="tel"
+                                  placeholder="Masukkan nomor telepon atau WhatsApp"
+                                  {...field}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="type"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Tipe Rumah</FormLabel>
+                              <Select
+                                onValueChange={field.onChange}
+                                defaultValue={field.value}
+                              >
                                 <FormControl>
-                                  <Input
-                                    placeholder="Masukkan nama anda"
-                                    {...field}
-                                  />
+                                  <SelectTrigger className="w-full">
+                                    <SelectValue placeholder="Pilih tipe rumah yang diminati" />
+                                  </SelectTrigger>
                                 </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                          <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Email</FormLabel>
-                                <FormControl>
-                                  <Input
-                                    type="email"
-                                    placeholder="email@example.com"
-                                    {...field}
-                                  />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                          <FormField
-                            control={form.control}
-                            name="phone"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Nomor Telepon / WhatsApp</FormLabel>
-                                <FormControl>
-                                  <Input
-                                    type="tel"
-                                    placeholder="Masukkan nomor telepon atau WhatsApp"
-                                    {...field}
-                                  />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                          <FormField
-                            control={form.control}
-                            name="type"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Tipe Rumah</FormLabel>
-                                <Select
-                                  onValueChange={field.onChange}
-                                  defaultValue={field.value}
-                                >
-                                  <FormControl>
-                                    <SelectTrigger className="w-full">
-                                      <SelectValue placeholder="Pilih tipe rumah yang diminati" />
-                                    </SelectTrigger>
-                                  </FormControl>
-                                  <SelectContent>
-                                    {/* <SelectItem value="21" disabled={true}>
+                                <SelectContent>
+                                  {/* <SelectItem value="21" disabled={true}>
                                       Tipe 21
                                     </SelectItem> */}
-                                    <SelectItem value="36">Tipe 36</SelectItem>
-                                    {/* <SelectItem value="45" disabled={true}>
+                                  <SelectItem value="36">Tipe 36</SelectItem>
+                                  {/* <SelectItem value="45" disabled={true}>
                                       Tipe 45
                                     </SelectItem>
                                     <SelectItem value="60" disabled={true}>
                                       Tipe 60
                                     </SelectItem> */}
-                                  </SelectContent>
-                                </Select>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                          <FormField
-                            control={form.control}
-                            name="message"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Catatan</FormLabel>
-                                <FormControl>
-                                  <Textarea
-                                    placeholder="Masukkan catatan tambahan apabila diperlukan"
-                                    className="resize-none"
-                                    {...field}
-                                  />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                          <Button type="submit" className="w-full">
-                            Kirim Permintaan
-                          </Button>
-                        </form>
-                      </Form>
-                    </CardContent>
-                  </>
-                ) : (
-                  <CardContent className="pt-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="text-center py-12"
-                    >
-                      <div className="bg-primary/10 text-primary w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
-                        <CheckCircle className="h-8 w-8" />
-                      </div>
-                      <h3 className="text-2xl font-bold mb-4">Thank You!</h3>
-                      <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-                        Your message has been successfully submitted. We'll get
-                        back to you within 24 hours.
-                      </p>
-                      <Button asChild>
-                        <Link href="/">
-                          Return to Home
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </motion.div>
+                                </SelectContent>
+                              </Select>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="message"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Catatan</FormLabel>
+                              <FormControl>
+                                <Textarea
+                                  placeholder="Masukkan catatan tambahan apabila diperlukan"
+                                  className="resize-none"
+                                  {...field}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <Button type="submit" className="w-full">
+                          Kirim Permintaan
+                        </Button>
+                      </form>
+                    </Form>
                   </CardContent>
-                )}
+                </>
               </Card>
             </motion.div>
 
