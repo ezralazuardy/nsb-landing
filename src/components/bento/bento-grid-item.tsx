@@ -41,7 +41,7 @@ export function BentoGridItem({
   const content = (
     <Card
       className={cn(
-        "overflow-hidden group h-full transition-all duration-200 shadow-none border-gray-200 p-0 gap-0",
+        "overflow-hidden group h-full transition-all duration-200 shadow-none border-none p-0 gap-0",
         variant === "featured" && "border-primary",
         className,
       )}
@@ -75,16 +75,25 @@ export function BentoGridItem({
         <p className="text-muted-foreground line-clamp-3">{description}</p>
 
         {image && (
-          <div className="relative mt-4 w-full overflow-hidden rounded-md h-max p-3">
+          <div className="relative mt-4 w-full overflow-hidden rounded-md h-max p-3 flex items-center justify-center">
             <Image
               src={image}
               alt={title}
               width={200}
-              height={size === "3x1" ? 176 : 200}
+              height={
+                size === "3x1"
+                  ? 176
+                  : size === "2x1"
+                    ? 150
+                    : size === "1x1"
+                      ? 100
+                      : 200
+              }
               className={cn(
-                "w-full transition-all group-hover:scale-105s",
-                size === "3x1" && "h-52",
+                "h-full transition-all group-hover:scale-105",
+                size === "3x1" && "h-52 w-full",
                 size === "2x1" && "h-42",
+                size === "1x1" && "h-full",
               )}
             />
           </div>

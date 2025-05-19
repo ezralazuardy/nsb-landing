@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, MoveRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -13,36 +13,34 @@ import Image from "next/image";
 
 const categories = [
   { id: "all", label: "Semua Tipe" },
-  { id: "21", label: "Tipe 21" },
+  // { id: "21", label: "Tipe 21" },
   { id: "36", label: "Tipe 36" },
-  { id: "45", label: "Tipe 45" },
-  { id: "60", label: "Tipe 60" },
+  // { id: "45", label: "Tipe 45" },
+  // { id: "60", label: "Tipe 60" },
 ];
 
-const projects = [
+const property = [
   {
     id: 1,
     title: "36/60",
     category: "36",
-    image:
-      "https://images.pexels.com/photos/5997993/pexels-photo-5997993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    description:
-      "A stunning modern villa with panoramic lake views and luxurious amenities.",
+    image: "/denah-36.png",
+    description: "Rumah Tipe 36/60 sangat cocok untuk keluarga muda",
   },
 ];
 
 export default function PropertyPreview() {
   const [filter, setFilter] = useState("all");
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [filteredProjects, setFilteredProjects] = useState(property);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
     if (filter === "all") {
-      setFilteredProjects(projects);
+      setFilteredProjects(property);
     } else {
       setFilteredProjects(
-        projects.filter((project) => project.category === filter),
+        property.filter((project) => project.category === filter),
       );
     }
   }, [filter]);
@@ -132,7 +130,7 @@ export default function PropertyPreview() {
               }}
               className="group"
             >
-              <Link href={`/portfolio/${project.id}`}>
+              <Link href={`/property/${project.id}`}>
                 <Card className="p-0 overflow-hidden border-border hover:border-primary/20 transition-all duration-300 h-full shadow-none">
                   <CardContent className="p-0">
                     <div className="relative overflow-hidden h-64">
@@ -149,7 +147,7 @@ export default function PropertyPreview() {
                           Tipe {project.category}
                         </Badge>
                         <h3 className="text-xl font-semibold text-white mb-2">
-                          {project.title}
+                          Tipe {project.title}
                         </h3>
                         <p className="text-sm text-white/70 hidden sm:block">
                           {project.description}
@@ -165,7 +163,7 @@ export default function PropertyPreview() {
 
         <div className="text-center mt-16">
           <Button size="lg" variant="outline" asChild>
-            <Link href="/portfolio" className="group">
+            <Link href="/property" className="group">
               Lihat Semua Tipe
               <MoveRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>

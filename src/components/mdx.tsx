@@ -74,7 +74,7 @@ function createHeading(level: any) {
         React.createElement("a", {
           href: `#${slug}`,
           key: `link-${slug}`,
-          className: "anchor",
+          className: "anchor font-serif",
         }),
       ],
       children,
@@ -95,6 +95,7 @@ let components = {
   h6: createHeading(6),
   Image: RoundedImage,
   a: CustomLink,
+  p: (props: any) => <p className="prose" {...props} />,
   code: Code,
   Table,
 };

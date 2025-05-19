@@ -218,16 +218,16 @@ export default function ContactPage() {
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
-                                    <SelectItem value="21" disabled={true}>
+                                    {/* <SelectItem value="21" disabled={true}>
                                       Tipe 21
-                                    </SelectItem>
+                                    </SelectItem> */}
                                     <SelectItem value="36">Tipe 36</SelectItem>
-                                    <SelectItem value="45" disabled={true}>
+                                    {/* <SelectItem value="45" disabled={true}>
                                       Tipe 45
                                     </SelectItem>
                                     <SelectItem value="60" disabled={true}>
                                       Tipe 60
-                                    </SelectItem>
+                                    </SelectItem> */}
                                   </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -287,36 +287,44 @@ export default function ContactPage() {
             </motion.div>
 
             {/* Contact Info Sidebar */}
-            <div className="space-y-6">
-              <Card className="border-none shadow-none">
-                <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
-                  <CardDescription>
-                    Reach out to us directly using the information below.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {contactInfo.map((item, index) => (
-                    <Link
-                      key={index}
-                      href={item.link}
-                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-border/90 transition-colors"
-                      target="_blank"
-                    >
-                      <div className="bg-primary/10 text-primary p-2 rounded-full">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <h3 className="font-medium">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {item.value}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </CardContent>
-              </Card>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="space-y-6">
+                <Card className="border-none shadow-none">
+                  <CardHeader>
+                    <CardTitle>Informasi Kontak</CardTitle>
+                    <CardDescription>
+                      Hubungi kami secara langsung menggunakan informasi di
+                      bawah ini.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {contactInfo.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={item.link}
+                        className="flex items-start space-x-3 p-3 rounded-lg hover:bg-border/90 transition-colors"
+                        target="_blank"
+                      >
+                        <div className="bg-primary/10 text-primary p-2 rounded-full">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <h3 className="font-medium">{item.title}</h3>
+                          <p className="text-sm text-muted-foreground">
+                            {item.value}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

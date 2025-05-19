@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { formatDate, getBlogPosts } from "../utils";
 import { baseUrl } from "@/app/sitemap";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -51,7 +53,7 @@ export function generateMetadata({ params }: any) {
   };
 }
 
-export default function Blog({ params }: any) {
+export default async function Blog({ params }: any) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
@@ -59,7 +61,17 @@ export default function Blog({ params }: any) {
   }
 
   return (
-    <section>
+    <section className="container py-10">
+      <div className="flex justify-between items-center mb-8 hover:underline">
+        <Link
+          href="/news"
+          className="transition-all ease-in-out duration-150 flex items-center gap-2 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 text-sm"
+        >
+          <ArrowLeft className="size-4" />
+          Kembali ke Berita
+        </Link>
+      </div>
+
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -82,7 +94,7 @@ export default function Blog({ params }: any) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
+      <h1 className="title font-semibold text-2xl tracking-tighter font-serif">
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">

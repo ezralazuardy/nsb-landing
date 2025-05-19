@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X, MonitorSmartphone } from "lucide-react";
-import { ModeToggle } from "@/components/mode-toggle";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
 import { usePathname } from "next/navigation";
@@ -67,8 +66,8 @@ export default function Header() {
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
                   pathname === link.path
-                    ? "text-primary font-bold"
-                    : "text-muted-foreground",
+                    ? "text-primary font-semibold"
+                    : "text-muted",
                 )}
               >
                 {link.name}
@@ -86,7 +85,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-4 md:hidden">
-            <ModeToggle />
+            {/* <ModeToggle /> */}
             <Button
               variant="ghost"
               size="icon"
@@ -126,7 +125,7 @@ export default function Header() {
             ))}
             <Button className="mt-2 w-full" asChild>
               <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                Book a Demo
+                Hubungi Kami
               </Link>
             </Button>
           </nav>

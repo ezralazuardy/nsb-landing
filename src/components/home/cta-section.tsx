@@ -75,7 +75,7 @@ export default function CtaSection() {
     <section className="py-24 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-12">
             <motion.div
               className="flex flex-col justify-center"
               initial={{ opacity: 0, x: -20 }}
@@ -154,7 +154,7 @@ export default function CtaSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <Card>
+              <Card className="shadow-none border">
                 <CardHeader>
                   <CardTitle className="text-3xl font-serif">
                     Minta Konsultasi
@@ -237,16 +237,16 @@ export default function CtaSection() {
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                                <SelectItem value="21" disabled={true}>
+                                {/* <SelectItem value="21" disabled={true}>
                                   Tipe 21
-                                </SelectItem>
+                                </SelectItem> */}
                                 <SelectItem value="36">Tipe 36</SelectItem>
-                                <SelectItem value="45" disabled={true}>
+                                {/* <SelectItem value="45" disabled={true}>
                                   Tipe 45
                                 </SelectItem>
                                 <SelectItem value="60" disabled={true}>
                                   Tipe 60
-                                </SelectItem>
+                                </SelectItem> */}
                               </SelectContent>
                             </Select>
                             <FormMessage />

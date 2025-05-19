@@ -2,18 +2,32 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Heading from "@/components/title";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+
+const property = [
+  {
+    id: 1,
+    title: "36/60",
+    category: "36",
+    image: "/denah-36.png",
+    description: "Rumah Tipe 36/60 sangat cocok untuk keluarga muda",
+  },
+];
+
+const categories = [
+  { id: "all", label: "Semua Tipe" },
+  // { id: "21", label: "Tipe 21" },
+  { id: "36", label: "Tipe 36" },
+  // { id: "45", label: "Tipe 45" },
+  // { id: "60", label: "Tipe 60" },
+];
 
 const faq = [
   {
@@ -50,6 +64,8 @@ const faq = [
 
 export default function ServicesPage() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [filter, setFilter] = useState("all");
+  const [filteredProjects, setFilteredProjects] = useState(property);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -83,67 +99,168 @@ export default function ServicesPage() {
         subtitle="Pilih tipe rumah yang sesuai dengan gaya hidup Anda. Mulai dari 36 m², dengan desain modern dan fungsional. Setiap rumah dirancang untuk memberikan kenyamanan maksimal bagi keluarga Anda."
       />
 
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-4">Pricing Plans</h2>
-            <p className="text-muted-foreground">
-              Flexible options to suit properties of all sizes and budgets.
-              Contact us for custom enterprise solutions.
-            </p>
-          </div>
-
-          {/* <div className="grid md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <Card
-                key={index}
-                className={`${
-                  plan.highlighted
-                    ? "border-primary shadow-lg shadow-primary/10 relative"
-                    : ""
-                }`}
+      <section className="py-10 bg-muted/30">
+        <div className="container mx-auto px-4 ">
+          <motion.div
+            className="mx-auto md:mx-0 flex flex-col md:flex-row items-center justify-between"
+            initial="hidden"
+            animate={isLoaded ? "visible" : "hidden"}
+            variants={containerVariants}
+          >
+            <motion.div
+              className="tracking-tight flex-col font-serif size-full md:size-96 flex justify-center mb-6"
+              variants={itemVariants}
+            >
+              <motion.h1
+                className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl font-serif"
+                variants={itemVariants}
               >
-                {plan.highlighted && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <Badge className="bg-primary text-primary-foreground">
-                      Most Popular
-                    </Badge>
-                  </div>
-                )}
-                <CardHeader>
-                  <CardTitle>{plan.name}</CardTitle>
-                  <div className="mt-4 mb-2">
-                    <span className="text-3xl font-bold">{plan.price}</span>
-                    {plan.price !== "Custom" && (
-                      <span className="text-muted-foreground ml-1">
-                        per property
-                      </span>
-                    )}
-                  </div>
-                  <CardDescription>{plan.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-primary mr-2 shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    className={`w-full mt-6 ${
-                      plan.highlighted ? "" : "variant-outline"
-                    }`}
-                    variant={plan.highlighted ? "default" : "outline"}
-                    asChild
-                  >
-                    <Link href="/contact">Get Started</Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                Site Plan
+              </motion.h1>
+              <motion.h1
+                className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl font-serif"
+                variants={itemVariants}
+              >
+                Blok A
+              </motion.h1>
+            </motion.div>
+
+            <motion.div
+              className="tracking-tight font-serif size-full md:size-96 items-center flex justify-center "
+              variants={itemVariants}
+            >
+              <img
+                src="/sitemap.png"
+                alt="Metro Cluster Tembalang"
+                className="w-full h-full"
+              />
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-10">
+        <div className="container mx-auto px-4">
+          <Tabs
+            defaultValue="all"
+            onValueChange={setFilter}
+            className="w-full md:w-auto mb-6"
+          >
+            <TabsList className="flex gap-2 h-auto p-0 bg-transparent w-max">
+              {categories.map((category) => (
+                <TabsTrigger
+                  key={category.id}
+                  value={category.id}
+                  className={cn(
+                    "px-4 py-2 data-[state=active]:shadow-none rounded-md border transition-all w-max",
+                    "data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground",
+                  )}
+                >
+                  {category.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
+
+          <motion.div
+            className="flex w-full items-center justify-center"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+          >
+            {filteredProjects.length === 0 && (
+              <span className="w-full font-serif flex items-center justify-center">
+                Tipe sedang tidak tersedia
+              </span>
+            )}
+          </motion.div>
+
+          <motion.div
+            className="flex w-full items-center justify-center"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+          >
+            {filteredProjects.length === 0 && (
+              <span className="w-full font-serif flex items-center justify-center">
+                Tipe sedang tidak tersedia
+              </span>
+            )}
+          </motion.div>
+
+          <motion.div
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 "
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+          >
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.4 },
+                  },
+                }}
+                className="group"
+              >
+                <Link href={`/property/${project.id}`}>
+                  <Card className="p-0 overflow-hidden border-border hover:border-primary/20 transition-all duration-300 h-full shadow-none">
+                    <CardContent className="p-0">
+                      <div className="relative overflow-hidden h-64">
+                        <Image
+                          width={400}
+                          height={400}
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+                        <div className="absolute bottom-0 left-0 p-6">
+                          <Badge className="mb-2 capitalize">
+                            Tipe {project.category}
+                          </Badge>
+                          <h3 className="text-xl font-semibold text-white mb-2">
+                            {project.title}
+                          </h3>
+                          <p className="text-sm text-white/70 hidden sm:block">
+                            {project.description}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
             ))}
-          </div> */}
+          </motion.div>
         </div>
       </section>
 

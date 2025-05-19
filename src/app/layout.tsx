@@ -1,7 +1,6 @@
 import "./global.css";
 
 import type { Metadata } from "next";
-import { Navbar } from "@/components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
@@ -71,7 +70,7 @@ export default function RootLayout({
         />
       </Head>
       <body className="antialiased lg:mx-auto">
-        <main className="flex-auto min-w-0 flex flex-col px-2 md:px-0">
+        <main className="flex-auto min-w-0 flex flex-col md:px-0">
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
