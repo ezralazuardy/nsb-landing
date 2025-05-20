@@ -276,9 +276,9 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap max-w-4xl mx-auto">
+          <div className="flex flex-wrap flex-col md:flex-row max-w-4xl mx-auto">
             {faq.map((item) => (
-              <div key={item.question} className="p-2 w-1/2 h-fit">
+              <div key={item.question} className="p-2 w-full md:w-1/2 h-fit">
                 <Card className="gap-2 flex w-full shadow-none">
                   <CardHeader>
                     <CardTitle className="text-xl">{item.question}</CardTitle>

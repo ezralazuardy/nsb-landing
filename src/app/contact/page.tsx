@@ -34,21 +34,22 @@ import { PhoneCall, Mail, MapPin, Instagram } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
 import Heading from "@/components/title";
-import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
+    message: "Nama setidaknya 2 karakter.",
   }),
   email: z.string().email({
-    message: "Please enter a valid email address.",
+    message: "Masukkan email yang valid.",
   }),
-  phone: z.string().optional(),
+  phone: z.string().min(10, {
+    message: "Nomor telepon setidaknya 10 karakter.",
+  }),
   type: z.string({
-    required_error: "Please select a project type.",
+    required_error: "Silakan pilih tipe yang diinginkan.",
   }),
   message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
+    message: "Masukkan pesan setidaknya 10 karakter.",
   }),
 });
 
@@ -89,7 +90,7 @@ export default function ContactPage() {
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email Bisnis",
-      value: "contact@metroclustertembalang.com",
+      value: <>contact@ metroclustertembalang.com</>,
       link: "mailto:contact@metroclustertembalang.com",
     },
     {
@@ -99,12 +100,12 @@ export default function ContactPage() {
         "Jl. Al Barokah, Rowosari, Kec. Tembalang, Kota Semarang, Jawa Tengah",
       link: "https://maps.app.goo.gl/aGsxTNPXWDSwe9Su8",
     },
-    {
-      icon: <Instagram className="h-5 w-5" />,
-      title: "Instagram",
-      value: "@metrocluster_tembalang",
-      link: "https://www.instagram.com/metrocluster_tembalang/",
-    },
+    // {
+    //   icon: <Instagram className="h-5 w-5" />,
+    //   title: "Instagram",
+    //   value: "@metrocluster_tembalang",
+    //   link: "https://www.instagram.com/metrocluster_tembalang/",
+    // },
   ];
 
   return (
@@ -267,12 +268,12 @@ export default function ContactPage() {
                       bawah ini.
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-4 ">
                     {contactInfo.map((item, index) => (
                       <Link
                         key={index}
                         href={item.link}
-                        className="flex items-start space-x-3 p-3 rounded-lg hover:bg-border/90 transition-colors"
+                        className="overflow-hidden text-ellipsis flex items-start space-x-3 p-3 rounded-lg hover:bg-border/90 transition-colors"
                         target="_blank"
                       >
                         <div className="bg-primary/10 text-primary p-2 rounded-full">
@@ -280,7 +281,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="font-medium">{item.title}</h3>
-                          <p className="text-sm text-muted-foreground">
+                          <p className=" text-xs text-muted-foreground">
                             {item.value}
                           </p>
                         </div>

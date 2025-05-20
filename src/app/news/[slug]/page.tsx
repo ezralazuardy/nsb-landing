@@ -102,6 +102,16 @@ export default async function Blog({ params }: any) {
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
+
+      {post.metadata.image && (
+        <img
+          src={post.metadata.image}
+          alt="Blog Image"
+          className="w-full h-auto rounded-lg mb-4 mt-4"
+          loading="lazy"
+        />
+      )}
+
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
