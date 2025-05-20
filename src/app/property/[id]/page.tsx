@@ -4,14 +4,6 @@ import { propertyData } from "../property-data";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import React from "react";
-import { cn } from "@/lib/utils";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 
 export default function PropertyDetails({ params }: any) {
@@ -49,7 +41,7 @@ export default function PropertyDetails({ params }: any) {
           ))}
         </div>
 
-        <div className="flex md:ml-6 ml-0 flex-col gap-4 h-full sticky top-30 pt-10">
+        <div className="flex md:ml-12 ml-0 flex-col gap-4 h-full sticky top-30 pt-10">
           <h1 className="title font-semibold text-6xl tracking-tighter font-serif">
             {data.name}
           </h1>
