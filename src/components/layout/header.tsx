@@ -40,7 +40,7 @@ export default function Header() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300 !font-sans",
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
+          ? "bg-background/90 backdrop-blur-md border-b border-border"
           : "bg-transparent",
       )}
     >
@@ -73,7 +73,7 @@ export default function Header() {
                     "text-sm font-medium transition-colors hover:text-primary",
                     pathname === link.path
                       ? "text-primary font-semibold"
-                      : "text-primary opacity-60",
+                      : "text-primary opacity-80",
                   )}
                 >
                   {link.name}

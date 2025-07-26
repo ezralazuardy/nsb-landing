@@ -90,8 +90,8 @@ export default function ContactPage() {
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email Bisnis",
-      value: <>contact@ metroclustertembalang.com</>,
-      link: "mailto:contact@metroclustertembalang.com",
+      value: <>contact@nasaktiansolusibersama.co.id</>,
+      link: "mailto:contact@nasaktiansolusibersama.co.id",
     },
     {
       icon: <MapPin className="h-5 w-5" />,

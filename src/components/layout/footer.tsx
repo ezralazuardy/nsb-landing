@@ -53,11 +53,11 @@ const footerLinks: FooterLinksType[] = [
           <div className="flex flex-col">
             <span className="font-semibold">Email Bisnis</span>
             <span>
-              <>contact@ metroclustertembalang.com</>
+              <>contact@nasaktiansolusibersama.co.id</>
             </span>
           </div>
         ),
-        href: "mailto:contact@metroclustertembalang.com",
+        href: "mailto:contact@nasaktiansolusibersama.co.id",
         external: true,
       },
     ],

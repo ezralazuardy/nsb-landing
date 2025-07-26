@@ -92,29 +92,35 @@ export default function HeroSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <p className="text-primary-foreground font-bold text-3xl md:text-4xl font-serif">
-                250jt-an!
-              </p>
-              <p className="text-primary-foreground/80 text-sm">Mulai dari</p>
-            </div>
-            <div className="text-center">
-              <p className="text-primary-foreground font-bold text-3xl md:text-4xl font-serif">
-                50+ unit
-              </p>
-              <p className="text-primary-foreground/80 text-sm">Terjual</p>
-            </div>
-            <div className="text-center">
-              <p className="text-primary-foreground font-bold text-3xl md:text-4xl font-serif">
-                ±2 menit
+                100+
               </p>
               <p className="text-primary-foreground/80 text-sm">
-                Dekat Fasilitas Umum
+                Proyek Dikerjakan
               </p>
             </div>
             <div className="text-center">
               <p className="text-primary-foreground font-bold text-3xl md:text-4xl font-serif">
-                Terbatas!
+                50+
               </p>
-              <p className="text-primary-foreground/80 text-sm">Unit Tersisa</p>
+              <p className="text-primary-foreground/80 text-sm">
+                Klien Terpercaya
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="text-primary-foreground font-bold text-3xl md:text-4xl font-serif">
+                ±5 Hari
+              </p>
+              <p className="text-primary-foreground/80 text-sm">
+                Estimasi Instalasi Cepat
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="text-primary-foreground font-bold text-3xl md:text-4xl font-serif">
+                Full Support
+              </p>
+              <p className="text-primary-foreground/80 text-sm">
+                Tim Profesional &amp; Responsif
+              </p>
             </div>
           </div>
         </div>
