@@ -1,11 +1,14 @@
-# Metro Cluster Tembalang
+<div>
+  <img alt="CodeQL Analysis" src="https://github.com/lazuardytech/landing/actions/workflows/github-code-scanning/codeql/badge.svg" />
+  <img alt="Vercel" src="https://deploy-badge.vercel.app?url=https://lazuardy.tech&logo=vercel&name=vercel" />
+</div>
 
-- Next.js 15 + Typescript
-- MDX and Markdown support
-- Optimized for SEO (sitemap, robots, JSON-LD schema)
-- RSS Feed
-- Dynamic OG images
-- Syntax highlighting
-- Tailwind v4 with shadcn/ui
-- Vercel Speed Insights / Web Analytics
-- Geist font
+## nsb landing
+
+This is a repository for the landing page for PT NSB. Built using [Next](https://nextjs.org).
+
+> This project is **NOT** licensed and all rights are reserved. <br/>
+> You are not allowed to use this project for commercial purposes.
+
+> © PT NSB 2025. All rights reserved. <br/>
+> PT Nasaktian Solusi Bersama. <br/> [Terms of Service](https://www.nasaktiansolusibersama.co.id/legal/terms-of-service) | [Privacy Policy](https://www.nasaktiansolusibersama.co.id/legal/terms-of-service)

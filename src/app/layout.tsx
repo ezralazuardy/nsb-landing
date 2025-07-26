@@ -31,20 +31,18 @@ const sans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Metro Cluster Tembalang",
-    template: "%s | Metro Cluster Tembalang",
+    default: "PT Nasaktian Solusi Bersama",
+    template: "%s | PT Nasaktian Solusi Bersama",
   },
-  description:
-    "Temukan Hunian Impian Anda di Metro Cluster Tembalang – Nyaman, Strategis, dan Terjangkau.",
+  description: "Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda.",
   openGraph: {
-    title: "Metro Cluster Tembalang",
-    description:
-      "Temukan Hunian Impian Anda di Metro Cluster Tembalang – Nyaman, Strategis, dan Terjangkau.",
+    title: "PT Nasaktian Solusi Bersama",
+    description: "Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda.",
     url: baseUrl,
-    siteName: "Metro Cluster Tembalang",
+    siteName: "PT Nasaktian Solusi Bersama",
     locale: "en_US",
     type: "website",
-    images: "/logo.png",
+    // images: "/logo.png",
   },
   robots: {
     index: true,
@@ -74,12 +72,9 @@ export default function RootLayout({
       )}
       suppressHydrationWarning
     >
-      {/* <Head>
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=general-sans@1,2&display=swap"
-          rel="stylesheet"
-        />
-      </Head> */}
+      <Head>
+        <meta name="apple-mobile-web-app-title" content="PT NSB" />
+      </Head>
       <body className="antialiased lg:mx-auto">
         <main className="flex-auto min-w-0 flex flex-col md:px-0">
           <ThemeProvider
