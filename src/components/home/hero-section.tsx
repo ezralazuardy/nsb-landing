@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import hero from "../../../public/hero.png";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -62,23 +63,24 @@ export default function HeroSection() {
             className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6 font-serif"
             variants={itemVariants}
           >
-            Temukan Hunian Impian Anda di Metro Cluster Tembalang
+            Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda
           </motion.h1>
 
           <motion.p
-            className="text-xl text-muted-foreground mb-8 max-w-xl"
+            className="text-xl text-secondary mb-8 max-w-xl"
             variants={itemVariants}
           >
-            Nyaman, Strategis, dan Terjangkau.
+            Kolaboratif, Adaptif, dan Efektif.
           </motion.p>
         </motion.div>
       </div>
 
       <div className="flex flex-col md:flex-row items-center gap-4 aspect-[16/6]">
         <Image
-          src="/hero.webp"
-          alt="Hero Image"
           className="w-full h-auto object-cover aspect-[16/6]"
+          alt="Nasaktian Solusi Bersama"
+          placeholder="blur"
+          src={hero}
           width={1920}
           height={1080}
         />

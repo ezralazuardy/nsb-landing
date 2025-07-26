@@ -11,9 +11,9 @@ import Image from "next/image";
 
 const navLinks = [
   { name: "Beranda", path: "/" },
-  { name: "Properti", path: "/property" },
+  { name: "Layanan", path: "/services" },
   { name: "Berita", path: "/news" },
-  { name: "Tentang", path: "/about" },
+  // { name: "Tentang", path: "/about" },
   { name: "Kontak", path: "/contact" },
 ];
 
@@ -52,34 +52,42 @@ export default function Header() {
             className="flex items-center space-x-2 transition-opacity hover:opacity-80"
           >
             <span className="text-xl font-bold text-[#1B5587]">
-              <Image src="/logo.svg" alt="Logo" width={150} height={50} />
+              <Image
+                src="/logo-horizontal.png"
+                alt="Nasaktian Solusi Bersama"
+                className="max-h-14 w-auto"
+                width={800}
+                height={160}
+              />
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                href={link.path}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  pathname === link.path
-                    ? "text-primary font-semibold"
-                    : "text-muted",
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-primary",
+                    pathname === link.path
+                      ? "text-primary font-semibold"
+                      : "text-primary opacity-60",
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
 
-          {/* Header Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            {/* <ModeToggle /> */}
-            <Button asChild>
-              <Link href="/contact">Hubungi Kami</Link>
-            </Button>
+            {/* Header Actions */}
+            <div className="flex items-center space-x-4">
+              {/* <ModeToggle /> */}
+              <Button asChild>
+                <Link href="/contact">Hubungi Kami</Link>
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
