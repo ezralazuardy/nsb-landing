@@ -14,6 +14,7 @@ import {
 
 export function BentoGridItem({
   className,
+  imageClassName,
   title,
   description,
   icon,
@@ -75,7 +76,7 @@ export function BentoGridItem({
         <p className="text-muted-foreground line-clamp-3">{description}</p>
 
         {image && (
-          <div className="relative mt-4 w-full overflow-hidden rounded-md h-max p-3 flex items-center justify-center">
+          <div className="relative w-full overflow-hidden rounded-md h-max p-1 flex items-center justify-center">
             <Image
               src={image}
               alt={title}
@@ -84,16 +85,17 @@ export function BentoGridItem({
                 size === "3x1"
                   ? 176
                   : size === "2x1"
-                    ? 150
+                    ? 170
                     : size === "1x1"
                       ? 100
                       : 200
               }
               className={cn(
                 "h-full transition-all group-hover:scale-105",
-                size === "3x1" && "h-52 w-full",
-                size === "2x1" && "h-42",
+                size === "3x1" && "h-42 w-full",
+                size === "2x1" && "h-58 w-full",
                 size === "1x1" && "h-full",
+                imageClassName,
               )}
             />
           </div>

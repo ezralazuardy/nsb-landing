@@ -1,4 +1,3 @@
-import { DivideIcon as LucideIcon } from "lucide-react";
 import { ReactNode } from "react";
 
 export type BentoGridSize = "1x1" | "1x2" | "2x1" | "2x2" | "3x1";
@@ -10,6 +9,7 @@ export interface BentoGridProps {
 
 export interface BentoGridItemProps {
   className?: string;
+  imageClassName?: string;
   title: string;
   description: string;
   icon?: ReactNode;
