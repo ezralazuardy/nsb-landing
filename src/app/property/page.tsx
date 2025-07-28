@@ -31,7 +31,8 @@ const categories = [
 
 const faq = [
   {
-    question: "Apa saja tipe rumah yang tersedia di PT Nasaktian Solusi Bersama?",
+    question:
+      "Apa saja tipe rumah yang tersedia di PT Nasaktian Solusi Bersama?",
     answer:
       "PT Nasaktian Solusi Bersama menyediakan tipe rumah 36/60 yang dirancang khusus untuk keluarga muda.",
   },
@@ -99,7 +100,7 @@ export default function ServicesPage() {
         subtitle="Pilih tipe rumah yang sesuai dengan gaya hidup Anda. Mulai dari 36 m², dengan desain modern dan fungsional. Setiap rumah dirancang untuk memberikan kenyamanan maksimal bagi keluarga Anda."
       />
 
-      <section className="py-10 bg-muted/30">
+      {/* <section className="py-10 bg-muted/30">
         <div className="container mx-auto px-4 ">
           <motion.div
             className="mx-auto md:mx-0 flex flex-col md:flex-row items-center justify-between"
@@ -300,7 +301,7 @@ export default function ServicesPage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

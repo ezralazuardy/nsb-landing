@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 
 type HeadingProps = {
@@ -15,7 +15,7 @@ const Heading = ({ title, subtitle }: HeadingProps) => {
     setIsLoaded(true);
   }, []);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -26,7 +26,7 @@ const Heading = ({ title, subtitle }: HeadingProps) => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,

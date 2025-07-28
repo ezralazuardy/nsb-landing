@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import hero from "../../../public/hero.png";
 
@@ -12,9 +12,10 @@ export default function HeroSection() {
     setIsLoaded(true);
   }, []);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
+      y: 0,
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
@@ -23,7 +24,7 @@ export default function HeroSection() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
