@@ -76,7 +76,7 @@ export function BentoGridItem({
         <p className="text-muted-foreground line-clamp-3">{description}</p>
 
         {image && (
-          <div className="p-4 relative w-full overflow-hidden rounded-md h-max mt-4 flex items-center justify-center py-6 bg-[#fcedd2] max-h-48">
+          <div className="p-4 relative w-full overflow-hidden rounded-md h-max mt-4 flex items-center justify-center py-6 bg-[#fcedd2]/40 max-h-48">
             <Image
               src={image}
               alt={title}

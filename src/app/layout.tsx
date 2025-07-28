@@ -3,14 +3,10 @@ import "./global.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { baseUrl } from "./sitemap";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import { cn } from "@/lib/utils";
-import {
-  Bricolage_Grotesque,
-  Plus_Jakarta_Sans,
-} from "next/font/google";
+import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import Head from "next/head";
@@ -28,21 +24,15 @@ const sans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL ??
+      "https://www.nasaktiansolusibersama.co.id",
+  ),
   title: {
     default: "PT Nasaktian Solusi Bersama",
     template: "%s | PT Nasaktian Solusi Bersama",
   },
   description: "Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda.",
-  openGraph: {
-    title: "PT Nasaktian Solusi Bersama",
-    description: "Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda.",
-    url: baseUrl,
-    siteName: "PT Nasaktian Solusi Bersama",
-    locale: "en_US",
-    type: "website",
-    images: "/logo-horizontal.png",
-  },
   robots: {
     index: true,
     follow: true,

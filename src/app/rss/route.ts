@@ -1,4 +1,3 @@
-import { baseUrl } from "@/app/sitemap";
 import { getBlogPosts } from "@/app/news/utils";
 
 export async function GET() {
@@ -15,11 +14,11 @@ export async function GET() {
       (post) =>
         `<item>
           <title>${post.metadata.title}</title>
-          <link>${baseUrl}/news/${post.slug}</link>
+          <link>${process.env.NEXT_PUBLIC_APP_URL}/news/${post.slug}</link>
           <description>${post.metadata.summary || ""}</description>
           <pubDate>${new Date(
-          post.metadata.publishedAt,
-        ).toUTCString()}</pubDate>
+            post.metadata.publishedAt,
+          ).toUTCString()}</pubDate>
         </item>`,
     )
     .join("\n");
@@ -28,7 +27,7 @@ export async function GET() {
   <rss version="2.0">
     <channel>
         <title>PT Nasaktian Solusi Bersama</title>
-        <link>${baseUrl}</link>
+        <link>${process.env.NEXT_PUBLIC_APP_URL}</link>
         <description>This is PT Nasaktian Solusi Bersama RSS feed</description>
         ${itemsXml}
     </channel>
