@@ -31,8 +31,8 @@ const footerLinks: FooterLinksType[] = [
   {
     title: "Hukum",
     links: [
-      { name: "Kebijakan Privasi", href: "/privacy" },
-      { name: "Syarat dan Ketentuan", href: "/terms" },
+      { name: "Kebijakan Privasi", href: "/legal/privacy-policy" },
+      { name: "Syarat dan Ketentuan", href: "/legal/terms-and-condition" },
     ],
   },
   {
@@ -79,7 +79,7 @@ export default function Footer() {
                 <Image
                   src="/logo-horizontal.png"
                   alt="Nasaktian Solusi Bersama"
-                  className="max-h-14 w-auto"
+                  className="max-h-14 w-auto cursor-pointer"
                   width={800}
                   height={160}
                 />

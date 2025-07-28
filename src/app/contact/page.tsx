@@ -113,107 +113,108 @@ export default function ContactPage() {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-6 items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="lg:col-span-2"
-            >
-              <Card className="border-none shadow-none">
-                <>
-                  <CardHeader>
-                    <CardTitle className="text-3xl font-serif">
-                      Minta Konsultasi
-                    </CardTitle>
-                    <CardDescription>
-                      Isi formulir di bawah ini dan kami akan menghubungi Anda
-                      dalam waktu 24 jam.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Form {...form}>
-                      <form
-                        ref={formRef}
-                        onSubmit={form.handleSubmit(onSubmit)}
-                        className="space-y-6"
-                      >
-                        <FormField
-                          control={form.control}
-                          name="name"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Nama</FormLabel>
-                              <FormControl>
-                                <Input
-                                  placeholder="Masukkan nama anda"
-                                  {...field}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Email</FormLabel>
-                              <FormControl>
-                                <Input
-                                  type="email"
-                                  placeholder="email@example.com"
-                                  {...field}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="phone"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Nomor Telepon / WhatsApp</FormLabel>
-                              <FormControl>
-                                <Input
-                                  type="tel"
-                                  placeholder="Masukkan nomor telepon atau WhatsApp"
-                                  {...field}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="message"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Catatan</FormLabel>
-                              <FormControl>
-                                <Textarea
-                                  placeholder="Masukkan catatan tambahan apabila diperlukan"
-                                  className="resize-none"
-                                  {...field}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <Button type="submit" className="w-full">
-                          Kirim Permintaan
-                        </Button>
-                      </form>
-                    </Form>
-                  </CardContent>
-                </>
-              </Card>
-            </motion.div>
+            <div className="lg:col-span-2">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Card className="border-none shadow-none">
+                  <>
+                    <CardHeader>
+                      <CardTitle className="text-3xl font-serif">
+                        Minta Konsultasi
+                      </CardTitle>
+                      <CardDescription>
+                        Isi formulir di bawah ini dan kami akan menghubungi Anda
+                        dalam waktu 24 jam.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Form {...form}>
+                        <form
+                          ref={formRef}
+                          onSubmit={form.handleSubmit(onSubmit)}
+                          className="space-y-6"
+                        >
+                          <FormField
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Nama</FormLabel>
+                                <FormControl>
+                                  <Input
+                                    placeholder="Masukkan nama anda"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Email</FormLabel>
+                                <FormControl>
+                                  <Input
+                                    type="email"
+                                    placeholder="email@example.com"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <FormField
+                            control={form.control}
+                            name="phone"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Nomor Telepon / WhatsApp</FormLabel>
+                                <FormControl>
+                                  <Input
+                                    type="tel"
+                                    placeholder="Masukkan nomor telepon atau WhatsApp"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <FormField
+                            control={form.control}
+                            name="message"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Catatan</FormLabel>
+                                <FormControl>
+                                  <Textarea
+                                    placeholder="Masukkan catatan tambahan apabila diperlukan"
+                                    className="resize-none"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <Button type="submit" className="w-full">
+                            Kirim Permintaan
+                          </Button>
+                        </form>
+                      </Form>
+                    </CardContent>
+                  </>
+                </Card>
+              </motion.div>
+            </div>
 
             {/* Contact Info Sidebar */}
             <motion.div

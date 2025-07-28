@@ -14,7 +14,7 @@ const navLinks = [
   { name: "Beranda", path: "/" },
   { name: "Layanan", path: "/services" },
   // { name: "Berita", path: "/news" },
-  // { name: "Tentang", path: "/about" },
+  { name: "Tentang", path: "/about" },
   { name: "Kontak", path: "/contact" },
 ];
 
