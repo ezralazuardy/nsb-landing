@@ -42,10 +42,10 @@ const footerLinks: FooterLinksType[] = [
         name: (
           <div className="flex flex-col">
             <span className="font-semibold">Nomor Bisnis</span>
-            <span>+62 812 2727 7982</span>
+            <span>+62 8111 587 679</span>
           </div>
         ),
-        href: "https://wa.me/6281227277982",
+        href: "https://wa.me/628111587679",
         external: true,
       },
       {
@@ -86,7 +86,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              "Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda."
+              Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda.
             </p>
             <div className="pt-2">
               <Button asChild>
@@ -120,8 +120,8 @@ export default function Footer() {
 
         <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-between sm:space-y-0 mt-8">
           <p className="text-sm text-muted-foreground text-center mx-auto">
-            © {new Date().getFullYear()} PT Nasaktian Solusi Bersama. All rights
-            reserved.
+            © {new Date().getFullYear()} PT Nasaktian Solusi Bersama. All
+            rights reserved.
           </p>
         </div>
       </div>

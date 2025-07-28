@@ -64,7 +64,7 @@ export default function CtaSection() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     window.open(
       `
-      https://wa.me/6281227277982?text=Nama:%20${values.name}%0AEmail:%20${values.email}%0ANo.%20WhatsApp:%20${values.phone}%0ACatatan:%20${values.message}
+      https://wa.me/628111587679?text=Nama:%20${values.name}%0AEmail:%20${values.email}%0ANo.%20WhatsApp:%20${values.phone}%0ACatatan:%20${values.message}
       `,
       "_blank",
     );

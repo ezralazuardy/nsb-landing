@@ -66,7 +66,7 @@ export default function ContactPage() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     window.open(
       `
-      https://wa.me/6281227277982?text=Nama:%20${values.name}%0AEmail:%20${values.email}%0ANo.%20WhatsApp:%20${values.phone}%0ACatatan:%20${values.message}
+      https://wa.me/628111587679?text=Nama:%20${values.name}%0AEmail:%20${values.email}%0ANo.%20WhatsApp:%20${values.phone}%0ACatatan:%20${values.message}
       `,
       "_blank",
     );
@@ -80,21 +80,20 @@ export default function ContactPage() {
     {
       icon: <PhoneCall className="h-5 w-5" />,
       title: "Nomor Bisnis",
-      value: "+62 812 2727 7982",
-      link: "https://wa.me/6281227277982",
+      value: "+62 8111 587 679",
+      link: "https://wa.me/628111587679",
     },
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email Bisnis",
-      value: <>contact@nasaktiansolusibersama.co.id</>,
+      value: <>contact @nasaktiansolusibersama.co.id</>,
       link: "mailto:contact@nasaktiansolusibersama.co.id",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       title: "Address",
-      value:
-        "Jl. Al Barokah, Rowosari, Kec. Tembalang, Kota Semarang, Jawa Tengah",
-      link: "https://maps.app.goo.gl/aGsxTNPXWDSwe9Su8",
+      value: "Cluster Venice Blok L8 No. 1, Tangerang Selatan 15324",
+      link: "https://maps.app.goo.gl/vSH1rU7JoPEvBp5f7",
     },
     // {
     //   icon: <Instagram className="h-5 w-5" />,
