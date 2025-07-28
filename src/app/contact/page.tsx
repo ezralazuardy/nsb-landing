@@ -45,9 +45,6 @@ const formSchema = z.object({
   phone: z.string().min(10, {
     message: "Nomor telepon setidaknya 10 karakter.",
   }),
-  type: z.string({
-    required_error: "Silakan pilih tipe yang diinginkan.",
-  }),
   message: z.string().min(10, {
     message: "Masukkan pesan setidaknya 10 karakter.",
   }),
@@ -62,7 +59,6 @@ export default function ContactPage() {
       name: "",
       email: "",
       phone: "",
-      type: "",
       message: "",
     },
   });
@@ -70,7 +66,7 @@ export default function ContactPage() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     window.open(
       `
-      https://wa.me/6281227277982?text=Nama:%20${values.name}%0AEmail:%20${values.email}%0ANo.%20WhatsApp:%20${values.phone}%0ATipe%20Rumah:%20${values.type}%0ACatatan:%20${values.message}
+      https://wa.me/6281227277982?text=Nama:%20${values.name}%0AEmail:%20${values.email}%0ANo.%20WhatsApp:%20${values.phone}%0ACatatan:%20${values.message}
       `,
       "_blank",
     );
@@ -112,7 +108,7 @@ export default function ContactPage() {
     <div className="flex flex-col">
       <Heading
         title="Kontak Kami"
-        subtitle="Pilih tipe rumah yang sesuai dengan gaya hidup Anda. Mulai dari 36 m², dengan desain modern dan fungsional. Setiap rumah dirancang untuk memberikan kenyamanan maksimal bagi keluarga Anda."
+        subtitle="Kami menyediakan berbagai layanan teknologi terpadu untuk meningkatkan produktivitas dan menciptakan lingkungan kerja yang optimal."
       />
 
       <section className="py-16 bg-muted/30">
@@ -189,38 +185,6 @@ export default function ContactPage() {
                                   {...field}
                                 />
                               </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="type"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Tipe Rumah</FormLabel>
-                              <Select
-                                onValueChange={field.onChange}
-                                defaultValue={field.value}
-                              >
-                                <FormControl>
-                                  <SelectTrigger className="w-full">
-                                    <SelectValue placeholder="Pilih tipe rumah yang diminati" />
-                                  </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                  {/* <SelectItem value="21" disabled={true}>
-                                      Tipe 21
-                                    </SelectItem> */}
-                                  <SelectItem value="36">Tipe 36</SelectItem>
-                                  {/* <SelectItem value="45" disabled={true}>
-                                      Tipe 45
-                                    </SelectItem>
-                                    <SelectItem value="60" disabled={true}>
-                                      Tipe 60
-                                    </SelectItem> */}
-                                </SelectContent>
-                              </Select>
                               <FormMessage />
                             </FormItem>
                           )}

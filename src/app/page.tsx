@@ -9,7 +9,7 @@ export default function Home() {
     <div className="flex flex-col w-full">
       <HeroSection />
       <BenefitSection />
-      <PropertyPreview />
+      {/* <PropertyPreview /> */}
       <TestimonialsSection />
       <CtaSection />
     </div>

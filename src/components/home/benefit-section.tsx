@@ -28,6 +28,14 @@ export default function BenefitSection() {
             size="3x1"
             image="/illustration/1.svg"
             imageClassName="mb-10"
+            footer={
+              <div className="flex items-center">
+                <Asterisk className="h-4 w-4 mr-2 text-muted-foreground" />
+                <span className="text-xs text-muted-foreground">
+                  Dengan tenaga profesional berpengalaman dibidangnya
+                </span>
+              </div>
+            }
           />
 
           <BentoGridItem

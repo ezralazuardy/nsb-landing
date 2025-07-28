@@ -95,7 +95,7 @@ export default function AboutPage() {
                 Membantu Anda Meraih Rumah Idaman
               </h1>
               <p className="text-lg text-muted-foreground mb-6">
-                Metro Cluster Tembalang adalah sebuah perumahan yang berlokasi
+                PT Nasaktian Solusi Bersama adalah sebuah perumahan yang berlokasi
                 di Kelurahan Rowosari, Kecamatan Tembalang, Kota Semarang.
                 Proyek ini dikembangkan oleh PT. PGM Group
               </p>
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img
                 src="/logo.png"
-                alt="Metro Cluster Tembalang"
+                alt="PT Nasaktian Solusi Bersama"
                 className="w-full h-full object-cover"
               />
             </div>

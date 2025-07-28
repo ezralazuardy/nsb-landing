@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export function GET(request: Request) {
   let url = new URL(request.url);
-  let title = url.searchParams.get("title") || "Metro Cluster Tembalang";
+  let title = url.searchParams.get("title") || "PT Nasaktian Solusi Bersama";
 
   return new ImageResponse(
     (

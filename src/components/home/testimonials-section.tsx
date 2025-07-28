@@ -10,45 +10,56 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     id: 1,
-    name: "Budi Santoso",
-    role: "Pembeli Rumah",
-    company: "Metro Cluster Tembalang",
+    name: "Aditya Nugroho",
+    role: "IT Manager",
+    company: "PT Maju Teknologi Bersama",
     content:
-      "Saya sangat puas dengan Metro Cluster Tembalang. Lokasinya strategis, harga terjangkau, dan proses pembelian sangat mudah. Lingkungannya juga nyaman dan aman untuk keluarga saya.",
-    avatar: "BS",
+      "Implementasi ruang rapat pintar dari tim ini sangat membantu meningkatkan kolaborasi tim kami. Integrasinya rapi dan mudah digunakan.",
+    avatar: "AN",
     rating: 5,
   },
   {
     id: 2,
-    name: "Sari Wulandari",
-    role: "Penghuni",
-    company: "Metro Cluster Tembalang",
+    name: "Lia Hartati",
+    role: "Marketing Manager",
+    company: "Grand Galaxy Mall",
     content:
-      "Hunian yang tepat untuk keluarga muda seperti kami. Fasilitas lengkap dan akses ke berbagai tempat penting sangat memudahkan aktivitas sehari-hari.",
-    avatar: "SW",
+      "Digital signage dan video wall yang mereka pasang berhasil menarik perhatian pengunjung dan meningkatkan engagement kami secara signifikan.",
+    avatar: "LH",
     rating: 5,
   },
   {
     id: 3,
-    name: "Andi Prasetyo",
-    role: "Pembeli",
-    company: "Metro Cluster Tembalang",
+    name: "Rizky Pratama",
+    role: "General Manager",
+    company: "Hotel Nirwana",
     content:
-      "Pelayanan dari tim Metro Cluster sangat profesional dan responsif. Saya merasa sangat terbantu dalam proses KPR dan pembelian rumah.",
-    avatar: "AP",
+      "Desain akustik interior mereka membuat suasana hotel kami menjadi jauh lebih tenang dan nyaman, sangat mempengaruhi kenyamanan tamu.",
+    avatar: "RP",
     rating: 5,
   },
   {
     id: 4,
-    name: "Rina Dewi",
-    role: "Penghuni",
-    company: "Metro Cluster Tembalang",
+    name: "Maya Kusuma",
+    role: "HR & GA",
+    company: "CV Prima Logistik",
     content:
-      "Lingkungan yang asri dan aman membuat kami betah tinggal di sini. Anak-anak bisa bermain dengan nyaman dan kami merasa tenang.",
-    avatar: "RD",
+      "Sistem kontrol akses dan CCTV dengan analitik cerdas membuat kantor kami jauh lebih aman dan mudah dikelola.",
+    avatar: "MK",
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: "Dewi Anindita",
+    role: "Founder",
+    company: "Startup Xpress",
+    content:
+      "Kami dibantu dalam pengembangan software kustom yang benar-benar sesuai dengan alur kerja tim kami. Sangat responsif dan profesional!",
+    avatar: "DA",
     rating: 5,
   },
 ];
+
 
 export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
@@ -88,14 +99,14 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 font-serif">
-            Kata Penghuni Kami
+            Kata Customer Kami
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Bukti nyata Metro Cluster Tembalang lebih dari sekadar hunian, ini
+            Bukti nyata PT Nasaktian Solusi Bersama lebih dari sekadar hunian, ini
             adalah sebuah keluarga besar yang saling mendukung dan tumbuh
             bersama.
           </p>
@@ -116,7 +127,7 @@ export default function TestimonialsSection() {
               exit="exit"
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              <Card className="border-none shadow-none bg-card">
+              <Card className="border-none shadow-none bg-muted/20">
                 <CardContent className="pt-10">
                   <div className="flex flex-col items-center text-center">
                     <div className="flex mb-4">

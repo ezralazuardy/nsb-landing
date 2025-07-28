@@ -9,7 +9,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import {
   Bricolage_Grotesque,
-  Manrope,
   Plus_Jakarta_Sans,
 } from "next/font/google";
 import Header from "@/components/layout/header";
@@ -42,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "PT Nasaktian Solusi Bersama",
     locale: "en_US",
     type: "website",
-    // images: "/logo.png",
+    images: "/logo-horizontal.png",
   },
   robots: {
     index: true,
@@ -77,16 +76,16 @@ export default function RootLayout({
       </Head>
       <body className="antialiased lg:mx-auto">
         <main className="flex-auto min-w-0 flex flex-col md:px-0">
-          <ThemeProvider
+          {/* <ThemeProvider
             attribute="class"
             defaultTheme="light"
             enableSystem
             disableTransitionOnChange
-          >
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </ThemeProvider>
+          > */}
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          {/* </ThemeProvider> */}
           <Analytics />
           <SpeedInsights />
         </main>

@@ -18,7 +18,7 @@ export default function Page() {
     <div>
       <Heading
         title="Berita"
-        subtitle="Pantau secara langsung kemajuan pembangunan Metro Cluster Tembalang. Kami rutin membagikan update terbaru mengenai progres konstruksi, penyelesaian fasilitas, dan berbagai milestone penting lainnya."
+        subtitle="Pantau secara langsung kemajuan pembangunan PT Nasaktian Solusi Bersama. Kami rutin membagikan update terbaru mengenai progres konstruksi, penyelesaian fasilitas, dan berbagai milestone penting lainnya."
       />
 
       <section className="container">

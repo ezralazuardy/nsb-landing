@@ -18,8 +18,8 @@ export async function GET() {
           <link>${baseUrl}/news/${post.slug}</link>
           <description>${post.metadata.summary || ""}</description>
           <pubDate>${new Date(
-            post.metadata.publishedAt,
-          ).toUTCString()}</pubDate>
+          post.metadata.publishedAt,
+        ).toUTCString()}</pubDate>
         </item>`,
     )
     .join("\n");
@@ -27,9 +27,9 @@ export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
-        <title>Metro Cluster Tembalang</title>
+        <title>PT Nasaktian Solusi Bersama</title>
         <link>${baseUrl}</link>
-        <description>This is Metro Cluster Tembalang RSS feed</description>
+        <description>This is PT Nasaktian Solusi Bersama RSS feed</description>
         ${itemsXml}
     </channel>
   </rss>`;

@@ -17,7 +17,7 @@ const footerLinks: FooterLinksType[] = [
   {
     title: "Link Cepat",
     links: [
-      { name: "Properti", href: "/property" },
+      { name: "Layanan", href: "/services" },
       {
         name: "Tentang Kami",
         href: "/about",
@@ -76,12 +76,17 @@ export default function Footer() {
               className="flex items-center space-x-2 transition-opacity hover:opacity-80"
             >
               <span className="text-xl font-bold text-[#1B5587]">
-                <Image src="/logo.svg" alt="Logo" width={150} height={50} />
+                <Image
+                  src="/logo-horizontal.png"
+                  alt="Nasaktian Solusi Bersama"
+                  className="max-h-14 w-auto"
+                  width={800}
+                  height={160}
+                />
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              "Temukan Hunian Impian Anda di Metro Cluster Tembalang – Nyaman,
-              Strategis, dan Terjangkau."
+              "Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda."
             </p>
             <div className="pt-2">
               <Button asChild>
@@ -115,7 +120,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-between sm:space-y-0 mt-8">
           <p className="text-sm text-muted-foreground text-center mx-auto">
-            © {new Date().getFullYear()} Metro Cluster Tembalang. All rights
+            © {new Date().getFullYear()} PT Nasaktian Solusi Bersama. All rights
             reserved.
           </p>
         </div>

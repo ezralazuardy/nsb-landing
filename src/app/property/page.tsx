@@ -31,19 +31,19 @@ const categories = [
 
 const faq = [
   {
-    question: "Apa saja tipe rumah yang tersedia di Metro Cluster Tembalang?",
+    question: "Apa saja tipe rumah yang tersedia di PT Nasaktian Solusi Bersama?",
     answer:
-      "Metro Cluster Tembalang menyediakan tipe rumah 36/60 yang dirancang khusus untuk keluarga muda.",
+      "PT Nasaktian Solusi Bersama menyediakan tipe rumah 36/60 yang dirancang khusus untuk keluarga muda.",
   },
   {
-    question: "Apa keunggulan lokasi Metro Cluster Tembalang?",
+    question: "Apa keunggulan lokasi PT Nasaktian Solusi Bersama?",
     answer:
       "Lokasi strategis dekat kampus, rumah sakit, supermarket, dan pusat kota Semarang, membuat aktivitas sehari-hari lebih praktis.",
   },
   {
     question: "Apakah sertifikat dan izin bangunan sudah lengkap?",
     answer:
-      "Ya, semua unit di Metro Cluster Tembalang memiliki sertifikat SHM dan IMB yang lengkap, menjamin keamanan investasi Anda.",
+      "Ya, semua unit di PT Nasaktian Solusi Bersama memiliki sertifikat SHM dan IMB yang lengkap, menjamin keamanan investasi Anda.",
   },
   {
     question: "Apa saja fasilitas yang tersedia di dalam cluster?",
@@ -131,7 +131,7 @@ export default function ServicesPage() {
             >
               <img
                 src="/sitemap.png"
-                alt="Metro Cluster Tembalang"
+                alt="PT Nasaktian Solusi Bersama"
                 className="w-full h-full"
               />
             </motion.div>

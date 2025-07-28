@@ -8,11 +8,12 @@ import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { ModeToggle } from "../mode-toggle";
 
 const navLinks = [
   { name: "Beranda", path: "/" },
   { name: "Layanan", path: "/services" },
-  { name: "Berita", path: "/news" },
+  // { name: "Berita", path: "/news" },
   // { name: "Tentang", path: "/about" },
   { name: "Kontak", path: "/contact" },
 ];

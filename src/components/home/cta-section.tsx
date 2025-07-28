@@ -43,9 +43,6 @@ const formSchema = z.object({
   phone: z.string().min(10, {
     message: "Nomor telepon setidaknya 10 karakter.",
   }),
-  type: z.string({
-    required_error: "Silakan pilih tipe yang diinginkan.",
-  }),
   message: z.string().min(10, {
     message: "Masukkan pesan setidaknya 10 karakter.",
   }),
@@ -60,7 +57,6 @@ export default function CtaSection() {
       name: "",
       email: "",
       phone: "",
-      type: "",
       message: "",
     },
   });
@@ -68,7 +64,7 @@ export default function CtaSection() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     window.open(
       `
-      https://wa.me/6281227277982?text=Nama:%20${values.name}%0AEmail:%20${values.email}%0ANo.%20WhatsApp:%20${values.phone}%0ATipe%20Rumah:%20${values.type}%0ACatatan:%20${values.message}
+      https://wa.me/6281227277982?text=Nama:%20${values.name}%0AEmail:%20${values.email}%0ANo.%20WhatsApp:%20${values.phone}%0ACatatan:%20${values.message}
       `,
       "_blank",
     );
@@ -91,7 +87,7 @@ export default function CtaSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold mb-6 font-serif">
-                Tertarik untuk memiliki hunian di Metro Cluster Tembalang?
+                Tertarik untuk menggunakan jasa PT Nasaktian Solusi Bersama?
               </h2>
               <p className="text-muted-foreground mb-6">
                 Jadwalkan konsultasi gratis dengan tim kami untuk mengetahui
@@ -228,38 +224,7 @@ export default function CtaSection() {
                           </FormItem>
                         )}
                       />
-                      <FormField
-                        control={form.control}
-                        name="type"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Tipe Rumah</FormLabel>
-                            <Select
-                              onValueChange={field.onChange}
-                              defaultValue={field.value}
-                            >
-                              <FormControl>
-                                <SelectTrigger className="w-full">
-                                  <SelectValue placeholder="Pilih tipe rumah yang diminati" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                {/* <SelectItem value="21" disabled={true}>
-                                  Tipe 21
-                                </SelectItem> */}
-                                <SelectItem value="36">Tipe 36</SelectItem>
-                                {/* <SelectItem value="45" disabled={true}>
-                                  Tipe 45
-                                </SelectItem>
-                                <SelectItem value="60" disabled={true}>
-                                  Tipe 60
-                                </SelectItem> */}
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+
                       <FormField
                         control={form.control}
                         name="message"
