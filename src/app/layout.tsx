@@ -26,13 +26,13 @@ const sans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL ??
-      "https://www.nasaktiansolusibersama.co.id",
+    "https://www.nasaktiansolusibersama.co.id",
   ),
   title: {
     default: "PT Nasaktian Solusi Bersama",
     template: "%s | PT Nasaktian Solusi Bersama",
   },
-  description: "Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda.",
+  description: "Setiap detail visual penting. Pastikan pesan Anda tampil sempurna di setiap sudut ruang.",
   robots: {
     index: true,
     follow: true,

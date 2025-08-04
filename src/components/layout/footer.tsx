@@ -86,7 +86,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda.
+              Setiap detail visual penting. Pastikan pesan Anda tampil sempurna di setiap sudut ruang.
             </p>
             <div className="pt-2">
               <Button asChild>

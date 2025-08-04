@@ -71,7 +71,7 @@ export default function HeroSection() {
             className="text-xl text-secondary mb-8 max-w-xl"
             variants={itemVariants}
           >
-            Kolaboratif, Adaptif, dan Efektif.
+            Masa Depan Komunikasi Visual Hadir di Ruang Anda.
           </motion.p>
         </motion.div>
       </div>

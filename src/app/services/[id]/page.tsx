@@ -309,7 +309,7 @@ export default function ServiceDetails({ params }: any) {
                   </motion.div>
                 </div>
 
-                <div className="flex gap-1 items-center">
+                {/*<div className="flex gap-1 items-center">
                   <motion.div
                     variants={itemVariants}
                     className="flex items-center gap-2 my-4"
@@ -321,7 +321,7 @@ export default function ServiceDetails({ params }: any) {
                       {data.price}
                     </h2>
                   </motion.div>
-                </div>
+                </div>*/}
 
                 <motion.div variants={itemVariants}>
                   <Button asChild className="w-max" size="lg">

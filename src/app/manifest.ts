@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "PT Nasaktian Solusi Bersama",
     short_name: "PT NSB",
-    description: "Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda.",
+    description: "Setiap detail visual penting. Pastikan pesan Anda tampil sempurna di setiap sudut ruang.",
     start_url: "/",
     display: "standalone",
     background_color: "ffffff",
