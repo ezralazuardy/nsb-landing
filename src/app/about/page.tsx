@@ -52,7 +52,7 @@ export default function AboutPage() {
       >
         <Heading
           title="Tentang Kami"
-          subtitle="PT Nasaktian Solusi Bersama hadir sebagai solusi audio visual terintegrasi untuk bisnis modern Anda."
+          subtitle="PT Nasaktian Solusi Bersama hadir sebagai solusi teknologi terintegrasi untuk bisnis modern Anda."
         />
 
         {/* About Hero */}
@@ -64,12 +64,11 @@ export default function AboutPage() {
                   Cerita Kami
                 </Badge>
                 <h1 className="text-4xl font-bold mb-6 font-serif">
-                  Solusi Audio Visual Terintegrasi untuk Bisnis Modern Anda
+                  Solusi Teknologi Terintegrasi untuk Bisnis Modern Anda
                 </h1>
                 <p className="text-lg text-muted-foreground mb-6">
                   PT Nasaktian Solusi Bersama adalah perusahaan yang berlokasi
-                  di Kelurahan Rowosari, Kecamatan Tembalang, Kota Semarang.
-                  Kami menyediakan solusi audio visual terintegrasi untuk berbagai jenis bisnis.
+                  di Tangerang Selatan. Kami menyediakan solusi teknologi terintegrasi untuk berbagai jenis bisnis di seluruh Indonesia.
                 </p>
                 <Button asChild>
                   <Link href="/contact">Hubungi Kami</Link>
@@ -100,7 +99,7 @@ export default function AboutPage() {
             >
               <h2 className="text-4xl font-serif font-bold mb-4">Misi & Visi</h2>
               <p className="text-muted-foreground text-lg">
-                Kami berkomitmen untuk memberikan solusi audio visual terbaik yang mendukung pertumbuhan dan keberhasilan bisnis Anda.
+                Kami berkomitmen untuk memberikan solusi teknologi terbaik yang mendukung pertumbuhan dan keberhasilan bisnis Anda.
               </p>
             </motion.div>
 
@@ -121,7 +120,7 @@ export default function AboutPage() {
                   <h3 className="text-2xl font-bold">Misi Kami</h3>
                 </div>
                 <p className="text-lg text-muted-foreground">
-                  Menyediakan solusi audio visual terintegrasi yang inovatif, handal, dan terjangkau
+                  Menyediakan solusi teknologi terintegrasi yang inovatif, handal, dan terjangkau
                   untuk membantu bisnis Anda tampil modern dan profesional di era digital.
                 </p>
               </motion.div>
@@ -136,7 +135,7 @@ export default function AboutPage() {
                   <h3 className="text-2xl font-bold">Visi Kami</h3>
                 </div>
                 <p className="text-lg text-muted-foreground">
-                  Menjadi penyedia solusi audio visual terdepan di Indonesia yang
+                  Menjadi penyedia solusi teknologi terdepan di Indonesia yang
                   membantu bisnis dalam menyampaikan pesan mereka secara efektif dan memukau.
                 </p>
               </motion.div>
